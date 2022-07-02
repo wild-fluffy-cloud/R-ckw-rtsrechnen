@@ -7,9 +7,13 @@ def main():
 
 
 def ask_user_for_number(prompt: str) -> float:
-    text = input(prompt)
-    number = float(text)
-    return number
+    while True:
+        try:
+            text = input(prompt)
+            number = float(text)
+            return number
+        except ValueError:
+            print("Bitte eine gültige Zahl eingeben")
 
 
 def listenpreis(gewinn: float, rabatt: float) -> float:
